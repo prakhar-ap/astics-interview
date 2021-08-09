@@ -1,0 +1,21 @@
+@import "./components/common/AuthForm.scss";
+@import "./components/common/wrappers/Button.scss";
+@import "./components/common/wrappers/Select.scss";
+@import "./components/common/wrappers/TextField.scss";
+@import "./components/dashboard/Dashboard.scss";
+
+@import "./components/common/modals/modal/Modal.scss";
+@import "./components/common/floating-buttons/FloatingAddButton.scss";
+
+:root {
+    --windowsMinWidth: 1000px;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: var(--windowsMinWidth);
+}

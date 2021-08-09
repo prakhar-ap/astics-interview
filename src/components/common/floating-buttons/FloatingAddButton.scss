@@ -1,0 +1,26 @@
+.float-button {
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    overflow: visible;
+    text-align: center;
+    line-height: 56px;
+    font-size: 28px;
+    color: rgba(255,255,255,1);
+    background-color: #ff4081;
+    border-radius: 50%;
+    box-shadow: 0 0 10px white;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in;
+    float: right;
+}
+
+.float-button::after {
+    position: relative;
+    z-index: 100;
+    content:"+";
+}
+
+.float-button:hover {
+    background-color: #fc1763;
+}
