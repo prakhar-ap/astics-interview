@@ -7,12 +7,15 @@
 @import "./components/common/modals/modal/Modal.scss";
 @import "./components/common/floating-buttons/FloatingAddButton.scss";
 
+@import "./components/common/images/Image.scss";
+
+@import "./components/item/Item.scss";
+
 :root {
     --windowsMinWidth: 1000px;
 }
 
 body {
-    background-color: black;
     display: flex;
     flex-direction: column;
     align-items: center;

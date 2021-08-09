@@ -6,6 +6,7 @@ class TableStore {
 
     setData = (data) => {
         this.data = data;
+        console.log('data tabel: ', this.data);
     }
 
     handlePageClick = (e, navigation) => {

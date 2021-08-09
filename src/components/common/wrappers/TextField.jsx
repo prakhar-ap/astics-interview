@@ -56,4 +56,8 @@ TextField.propTypes = {
     disabled: PropTypes.bool,
 };
 
+TextField.defaultProps = {
+    type: 'text',
+};
+
 export default TextField;

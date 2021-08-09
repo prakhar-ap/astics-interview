@@ -3,14 +3,15 @@ import ModalStore from "../modal/ModalStore";
 
 class AddItemModalStore extends ModalStore {
     defaultForm = {
-        type: '',
+        type: 'Grocery',
         title: '',
         brand: '',
         author: '',
         publisher: '',
         stock: 0,
         dimensions: '',
-        rating: 0,
+        rating: 1,
+        image: '',
     }
     form = this.defaultForm;
 
@@ -65,9 +66,14 @@ class AddItemModalStore extends ModalStore {
     handleChange = (e) => {
         this.form[e.target.name] = e.target.value;
     }
+
     handleClear = () => {
         this.form = this.defaultForm;
     }
+
+    onFileChange = (event) => {
+        this.form.image = URL.createObjectURL(event.target.files[0])      
+    };
     
     constructor() {
         super();
@@ -76,6 +82,7 @@ class AddItemModalStore extends ModalStore {
             displayFields: observable,
             handleChange: action,
             handleClear: action,
+            onFileChange: action,
         });
     }
 }

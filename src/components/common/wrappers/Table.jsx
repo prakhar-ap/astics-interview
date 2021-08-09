@@ -3,22 +3,26 @@ import PropTypes from 'prop-types';
 import { observer } from 'mobx-react';
 
 function Table({
-    TableStore,
+    store,
     headers,
 }) {
+
+    console.log('data: ', store.data);
     return (
         <div className={'Table'}>
             <table>
-                <tr>
-                    {headers.map((h) => (
-                        <th>{h}</th>
-                    ))}
-                </tr>
+                <thead>
+                    <tr key={'head'}>
+                        {headers.map((h) => (
+                            <th key={h}>{h}</th>
+                        ))}
+                    </tr>
+                </thead>
                 <tbody>
-                    {TableStore.data.map((d) => (
+                    {store.data.map((d) => (
                         <tr>
                             {Object.keys(d).map((cell) => (
-                                <td>{d[cell]}</td>
+                                <td key={cell}>{d[cell]}</td>
                             ))}
                         </tr>
                     ))}
@@ -29,7 +33,7 @@ function Table({
 }
 
 Table.propTypes = {
-    TableStore: PropTypes.object.isRequired,
+    store: PropTypes.object.isRequired,
     headers: PropTypes.array.isRequired,
 };
 
