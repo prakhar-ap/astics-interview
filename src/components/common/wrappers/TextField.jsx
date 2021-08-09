@@ -48,7 +48,7 @@ function TextField({
 TextField.propTypes = {
     name: PropTypes.string,
     type: PropTypes.string,
-    value: PropTypes.string,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.bool, PropTypes.number]),
     onChange: PropTypes.func.isRequired,
     placeholder: PropTypes.string,
     tooltip: PropTypes.string,

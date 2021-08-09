@@ -1,4 +1,4 @@
-import AuthForm from "../common/AuthForm";
+import AuthForm from "../common/auth/AuthForm";
 
 function Login(){
     return <AuthForm />

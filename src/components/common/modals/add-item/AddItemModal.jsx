@@ -8,8 +8,6 @@ import TextField from "../../wrappers/TextField";
 function AddItemModal({ store, onSave }) {
     const _onSave = (e) => {
         e.preventDefault();
-
-        console.log('save form', JSON.stringify(store.form));
         onSave(store.form);
         store.closeModal();
     }
@@ -26,7 +24,7 @@ function AddItemModal({ store, onSave }) {
         }
 
         return (
-            <TextField name={field.id} label={field.label} placeholder={field.placeholder} onChange={store.handleChange} />
+            <TextField name={field.id} label={field.label} placeholder={field.placeholder} onChange={store.handleChange} type={field.input} />
         )
     }
     
@@ -40,13 +38,10 @@ function AddItemModal({ store, onSave }) {
                         {renderType(field)}
                     </React.Fragment>
                 ))}
-                {/* <div> */}
                 <TextField type="file" onChange={store.onFileChange} />
-                    {/* <Button onClick={store.onFileUpload}>Upload!</Button> */}
-                {/* </div> */}
             </div>
             <Button onClick={() => store.closeModal()}>Close</Button>
-            <Button onClick={_onSave}>Save</Button>
+            <Button disabled={!store.isFormFilled} onClick={_onSave}>Save</Button>
         </Modal>
     );
 }

@@ -9,17 +9,35 @@
     color: rgba(255,255,255,1);
     background-color: #ff4081;
     border-radius: 50%;
-    box-shadow: 0 0 10px white;
+    box-shadow: 0 0 10px grey;
     cursor: pointer;
     transition: background-color 0.3s ease-in;
-    float: right;
 }
 
-.float-button::after {
+.add::after {
     position: relative;
     z-index: 100;
     content:"+";
 }
+
+.left::after {
+    position: relative;
+    z-index: 100;
+    content:"<";
+}
+
+.right::after {
+    position: relative;
+    z-index: 100;
+    content:">";
+}
+
+.remove::after {
+    position: relative;
+    z-index: 100;
+    content:"-";
+}
+
 
 .float-button:hover {
     background-color: #fc1763;

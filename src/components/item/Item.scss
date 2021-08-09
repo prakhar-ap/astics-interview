@@ -1,5 +1,10 @@
 .Item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin-top: 20px;
+
     .paper {
         align-items: flex-start;
         display: grid;
@@ -9,26 +14,84 @@
         border: 1px solid white;
         box-shadow: 0 0 20px gray;
         padding: 20px 20px;
+        width: 80%;
+        grid-template-columns: 250px 2px 400px 2px;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "image divider content del";
      
         .item-image {
             height: inherit;
             vertical-align: middle;
+            grid-area: "image";            
         }
 
+        .divider {
+            display: inline-block;
+            height: 300px;
+            width: 1px;
+            background: rgb(197, 184, 184);
+            grid-area: "divider";
+            padding: 20px 0;
+        }
+        
         .content {
             display: inline-block;
-            margin: 50px 0;
-            grid-area: 1 / 2 / 1 / 10;
+            grid-area: "content";
+            margin-left: 20px;
+
+            .float-del {
+                float: right;
+                margin-right: -340px;
+            }
             
-            .field {
-                padding: 15px 0;
+            .title {
+                display: inline-block;
+                font-weight: 600;
+                font-size: 30px;
+                overflow-wrap: break-word;
+                max-width: 500px;
+            }
+    
+            .subtitle {
+                opacity: 0.5;
+                font-weight: 600;
+                font-size: 15px;
+                display: grid;
+            }
+
+            .additional {
+                margin-top: 40px;
+
+                .rest-title {
+                    margin-bottom: 20px;
+                }
+
+                .rest {
+                    display: block;
+                    margin-top: 10px;
+
+                    .rTitle {
+                        display: inline-block;
+                        padding: 10px 5px;
+                        font-weight: 600;
+                    }
+                
+                    .description {
+                        opacity: 0.8;
+                        display: inline-block;
+                        font-weight: 100;
+                        padding: 10px 5px;
+                        max-width: 400px;
+                        overflow-wrap: break-word;
+                    }
+                }
+            }
+    
+            .authors, .publisher, .brand {
+                font-weight: 400;
+                font-size: 15px;
             }
         }
-        .title {
-            font-weight: 600;
-            opacity: 0.8;
-            text-transform: uppercase;
-        }    
-    
     }
 }

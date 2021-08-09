@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import TextField from './wrappers/TextField';
-import Button from './wrappers/Button';
+import TextField from '../wrappers/TextField';
+import Button from '../wrappers/Button';
 
 function AuthForm({type}){
     const [form, setForm] = useState({

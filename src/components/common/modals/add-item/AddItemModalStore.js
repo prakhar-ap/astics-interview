@@ -8,6 +8,8 @@ class AddItemModalStore extends ModalStore {
         brand: '',
         author: '',
         publisher: '',
+        currency: 'INR',
+        price: 0,
         stock: 0,
         dimensions: '',
         rating: 1,
@@ -23,37 +25,57 @@ class AddItemModalStore extends ModalStore {
             placeholder: 'Enter Title',
         },
         {
-            id: 'brand',
+            id: 'subtitle',
             type: 'field',
-            isHidden: this.form.type === 'book',
-            label: 'Brand',
-            placeholder: 'Enter Brand',
-        },
-        {
-            id: 'author',
-            type: 'field',
-            isHidden: this.form.type !== 'book',
-            label: 'Author',
-            placeholder: 'Enter Author Name',
-        },
-        {
-            id: 'publisher',
-            type: 'field',
-            isHidden: this.form.type !== 'book',
-            label: 'Publisher',
-            placeholder: 'Enter Publisher Name',
-        },
-        {
-            id: 'stock',
-            type: 'field',
-            label: 'Stock',
-            placeholder: 'e.g. 20',
+            label: 'Subtitle',
+            placeholder: 'Enter Subtitle',
         },
         {
             id: 'dimensions',
             type: 'field',
             label: 'Dimensions',
             placeholder: 'e.g. 12.2 cm * 14.2 cm ',
+        },
+        {
+            id: 'brand',
+            type: 'field',
+            isHidden: this.form.type === 'Book',
+            label: 'Brand',
+            placeholder: 'Enter Brand',
+        },
+        {
+            id: 'author',
+            type: 'field',
+            isHidden: this.form.type !== 'Book',
+            label: 'Author',
+            placeholder: 'Enter Author Name',
+        },
+        {
+            id: 'publisher',
+            type: 'field',
+            isHidden: this.form.type !== 'Book',
+            label: 'Publisher',
+            placeholder: 'Enter Publisher Name',
+        },
+        {
+            id: 'currency',
+            type: 'select',
+            label: 'Curreny',
+            options: ['INR', 'EUR']
+        },
+        {
+            id: 'price',
+            type: 'field',
+            label: 'Price',
+            input: 'number',
+            placeholder: 'e.g. 50$',
+        },
+        {
+            id: 'stock',
+            type: 'field',
+            label: 'Stock',
+            input: 'number',
+            placeholder: 'e.g. 20',
         },
         {
             id: 'rating',
@@ -64,7 +86,13 @@ class AddItemModalStore extends ModalStore {
     ]
     
     handleChange = (e) => {
-        this.form[e.target.name] = e.target.value;
+        const { name, value } = e.target;
+        this.form[name] = value;
+        if (name === 'type') {
+            this.displayFields[3].isHidden = this.form.type === 'Book';
+            this.displayFields[4].isHidden = this.form.type !== 'Book';
+            this.displayFields[5].isHidden = this.form.type !== 'Book';
+        }
     }
 
     handleClear = () => {
@@ -74,6 +102,17 @@ class AddItemModalStore extends ModalStore {
     onFileChange = (event) => {
         this.form.image = URL.createObjectURL(event.target.files[0])      
     };
+
+    get isFormFilled () {
+        const { type, title, subtitle, brand, author, publisher, dimensions, image } = this.form;
+        return !!title
+            && !!subtitle
+            && (type !== 'Book' ? !!brand : true)
+            && (type === 'Book' ? !!author : true)
+            && (type === 'Book' ? !!publisher : true)
+            && !!dimensions
+            && !!image;
+    }
     
     constructor() {
         super();

@@ -1,11 +1,11 @@
-@import "./components/common/AuthForm.scss";
+@import "./components/common/auth/AuthForm.scss";
 @import "./components/common/wrappers/Button.scss";
 @import "./components/common/wrappers/Select.scss";
 @import "./components/common/wrappers/TextField.scss";
 @import "./components/dashboard/Dashboard.scss";
 
 @import "./components/common/modals/modal/Modal.scss";
-@import "./components/common/floating-buttons/FloatingAddButton.scss";
+@import "./components/common/floating-buttons/FloatButton.scss";
 
 @import "./components/common/images/Image.scss";
 
@@ -13,6 +13,9 @@
 
 :root {
     --windowsMinWidth: 1000px;
+    --button-color: #ff4081;
+    --button-hover: #fc1763;
+    --ghost-white: #f5f6fb;
 }
 
 body {
@@ -21,4 +24,6 @@ body {
     align-items: center;
     justify-content: center;
     min-width: var(--windowsMinWidth);
+    background-color: var(--ghost-white);
+    font-family: 'Courier New', Courier, monospace;
 }

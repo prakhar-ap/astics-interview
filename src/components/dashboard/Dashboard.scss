@@ -1,4 +1,13 @@
 .Dashboard {
+    
+    .logout {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
+        margin-right: 20px;
+    }
+
     .search {
         margin: 20px 20px;
 
@@ -6,10 +15,45 @@
             display: flex;
             margin: 10px 0 10px 0;
         }
-
         .buttonContainer {
             display: flex;
             margin: 10px 0 10px 0;
         }
+    }
+
+    .add-button {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
+        margin-right: 20px;
+        margin-top: -20px;
+    }
+
+    .pagination {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .pb-left {
+            margin-left: -170px;
+        }
+
+        .pages {
+            display: inline-block;
+            margin-left: -10px;
+            margin-top: 15px;
+        }
+
+        .pb-right {
+            margin-top: -32px;
+            margin-left: 37px;
+        }
+    }
+
+    .float {
+        display: inline-block;
+        float: right;
     }
 }
