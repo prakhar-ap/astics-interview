@@ -2,6 +2,7 @@ import React from 'react';
 import FloatingRemoveButton from '../common/floating-buttons/FloatingRemoveButton';
 import Image from '../common/images/Image';
 import _get from 'lodash/get';
+import Rating from '../common/rating/Rating';
 
 function Item({ data, onDelete }) {
 
@@ -34,8 +35,9 @@ function Item({ data, onDelete }) {
                     </div>
                     <div className={'title'}>{data.title}</div>
                     <span className={'price'}> ({data.currency} {data.price})</span>
+                    <Rating rating={data.rating} />
                     <span className={'subtitle'}>{data.subtitle}</span>
-
+                    
                     <div className={'additional'}>
                         <div className={'rest-title'}>Additional Details:</div>
                         {Object.keys(additionalInfo).map((info) => additionalInfo[info] !== '' && (
