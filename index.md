@@ -1,37 +1,9 @@
-## Welcome to GitHub Pages
+# Getting Started with Create React App
 
-You can use the [editor on GitHub](https://github.com/prakhar-ap/astics-interview/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+# Login / SignUp
+![Screenshot 2021-08-09 at 5 13 50 PM](https://user-images.githubusercontent.com/62736769/128701332-4f6c789b-00f5-4799-ba31-f8713a4e0211.png)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+# Dashboard
+![Screenshot 2021-08-09 at 5 13 40 PM](https://user-images.githubusercontent.com/62736769/128701355-5772dc42-fcf4-480d-afbd-afe95dfccd1b.png)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/prakhar-ap/astics-interview/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
